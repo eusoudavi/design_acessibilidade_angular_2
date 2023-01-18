@@ -1,4 +1,4 @@
-import {AfterViewInit, ChangeDetectorRef, Component, TemplateRef, ViewChild} from '@angular/core';
+import {Component, TemplateRef, ViewChild} from '@angular/core';
 import {ModalRef, ModalService} from './shared/component/modal/modal/services/modal.service';
 
 @Component({
@@ -6,7 +6,7 @@ import {ModalRef, ModalService} from './shared/component/modal/modal/services/mo
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit{
+export class AppComponent {
   title = 'a11y-p2';
 
   firstName = 'Davi';
@@ -16,31 +16,15 @@ export class AppComponent implements AfterViewInit{
   @ViewChild('modal')
   public modalTemplateRef: TemplateRef<any>;
 
-  @ViewChild('template1')
-  public template1: TemplateRef<any>;
-
-  @ViewChild('template2')
-  public template2: TemplateRef<any>;
-
-  public selectedTemplate: TemplateRef<any>;
-
-  constructor(
-    private modalSerivice: ModalService,
-    private cd: ChangeDetectorRef) {
+  constructor(private modalSerivice: ModalService) {
   }
 
   public show(): void {
-    this.selectedTemplate = this.template2;
     this.modalSerivice.open(
       {
         templateRef: this.modalTemplateRef,
         title: 'User Details'
       }
     );
-  }
-
-  ngAfterViewInit(): void {
-    this.selectedTemplate = this.template1;
-    this.cd.detectChanges();
   }
 }
