@@ -24,3 +24,13 @@
     <button class="button button-secondary" type="button" (click)="modalRef.close()">Cancelar</button>
   </div>
 </ng-template>
+
+<ng-template #template1>
+  <p>Primeiro Template</p>
+</ng-template>
+
+<ng-template #template2>
+  <p>Segundo Template</p>
+</ng-template>
+
+<ng-content *ngTemplateOutlet="selectedTemplate"></ng-content>
