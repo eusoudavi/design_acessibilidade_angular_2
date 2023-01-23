@@ -8,24 +8,20 @@ import {ModalRef, ModalService} from './shared/component/modal/modal/services/mo
 })
 export class AppComponent {
   title = 'a11y-p2';
-
   firstName = 'Davi';
-
   public modalRef: ModalRef;
 
   @ViewChild('modal')
   public modalTemplateRef: TemplateRef<any>;
 
-  constructor(private modalSerivice: ModalService) {
-  }
+  constructor(private modalService: ModalService) {}
+
 
   public show(): void {
-    this.modalSerivice.open(
+    this.modalRef = this.modalService.open(
       {
         templateRef: this.modalTemplateRef,
         title: 'User Details'
       });
-
-    this.modalRef.close();
   }
 }
