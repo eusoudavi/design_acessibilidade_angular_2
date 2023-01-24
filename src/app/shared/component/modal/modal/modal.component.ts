@@ -9,7 +9,7 @@ import {fade} from '../../../animations/fade';
   animations: [fade]
 })
 export class ModalComponent implements OnInit {
-  @HostBinding('@fade') fade = true;
+  @HostBinding('@fade') fade = true;  // AQUI ESTAMOS PASSANDO O FADE PARA TODO O HOST DO MODAL
   public config: ModalConfig;
 
   constructor() { }
