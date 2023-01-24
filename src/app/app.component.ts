@@ -1,6 +1,6 @@
 import {Component, TemplateRef, ViewChild} from '@angular/core';
-import {ModalRef, ModalService} from './shared/component/modal/modal/services/modal.service';
 import {fade} from './shared/animations/fade';
+import {ModalRef, ModalService} from './shared/component/modal/services/modal.service';
 
 @Component({
   selector: 'app-root',

@@ -3,8 +3,8 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {ModalModule} from './shared/component/modal/modal/modal.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ModalModule} from './shared/component/modal/modal.module';
 
 @NgModule({
   declarations: [
