@@ -4,29 +4,34 @@
 <button class="button button-primary" type="button" (click)="show()">Apresentar Modal</button>
 
 <ng-template #modal>
-  <div class="form-field">
-    <label for="firstName">Primeiro Nome</label>
-    <input id="firstName" [(value)]="firstName">
-  </div>
 
-  <div class="form-field">
-    <label for="surName">Último Nome</label>
-    <input id="surName">
-  </div>
+  <form [formGroup]="form">
 
-  <div class="form-field">
-    <label for="age">Idade</label>
-    <input id="age">
-  </div>
+    <div class="form-field">
+      <label for="firstName">Primeiro Nome</label>
+      <input formControlName="firstName" id="firstName">
+    </div>
 
-  <label for="info">Inscreva-se para receber as notícias</label>
-  <input id="info" type="checkbox" (change)="info = !info">
-  <p [@fade] *ngIf="info">Obrigado por se inscrever!</p>
-<!--AQUI ESTAMOS PASSANDO O FADE APENAS PARA UM ELEMENTO ESPECÍFICO - ALÉM DE REAPROVEITARMOS A ANIMAÇÃO-->
-<!--NÃO ESQUECER DE ACRESCENTAR O FADE NO app.component.ts-->
+    <div class="form-field">
+      <label for="surName">Último Nome</label>
+      <input formControlName="surname" id="surName">
+    </div>
 
-  <div class="button-group">
-    <button class="button button-primary" type="button">Enviar</button>
-    <button class="button button-secondary" type="button" (click)="modalRef.close()">Cancelar</button>
-  </div>
+    <div class="form-field">
+      <label for="age">Idade</label>
+      <input formControlName="age" id="age">
+    </div>
+
+    <label for="info">Inscreva-se para receber as notícias</label>
+    <input formControlName="info" id="info" type="checkbox" (change)="info = !info">
+    <p [@fade] *ngIf="info">Obrigado por se inscrever!</p>
+
+    <div class="button-group">
+      <button class="button button-primary" type="button">Enviar</button>
+      <button class="button button-secondary" type="button" (click)="modalRef.close()">Cancelar</button>
+    </div>
+
+  </form>
+
+
 </ng-template>
