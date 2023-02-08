@@ -1,6 +1,7 @@
 <div class="modal-overlay" (click)="modalRef.close()" (keydown.escape)="modalRef.close()" >
   <div class="modal-content" (click)="$event.stopPropagation()"
-       appFocusTrap appFocusBack>
+       appFocusTrap appFocusBack
+       role="dialog" [attr.aria-label]="config.title"] aria-modal="true"> <!--ESSA LINHA AJUSTA O MODAL PARA QUE OS LEITORES DE VOZ POSSAM EXECUTAR A LEITURA CORRETAMENTE-->
     <h1 class="modal-title">{{config.title}}</h1>
     <!--    CONTEÚDO DO MODAL   -->
     <ng-container *ngTemplateOutlet="config.templateRef"></ng-container>
